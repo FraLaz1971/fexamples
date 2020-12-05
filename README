@@ -1,0 +1,35 @@
+# this project contains simple fortran (f77) examples
+# some of them inspired by exercises in the tutorial designed 
+# to be used in the course SCCM-001-F: 
+# "Introduction to Fortran at Stanford University", 1996. 
+# Permission to use this tutorial for educational and
+# other non-commercial purposes is granted 
+# provided all author and copyright information is retained. 
+# Erik Boman, Stanford, December 1995
+# many thanks to Erik Boman and Stanford University, California, USA.
+# it has been tested with the gnu gfortran compiler and gnu toolchain
+# to run with other compiler / toolchains , please refer to related manuals
+# to compile all the examples on unix-like OS, type
+./configure
+# then type
+make
+#or
+gmake
+#to install
+make install
+#to compile only one of them, say circle.f, type
+make circle
+#to remove generated files type
+make clean
+#to remove ALL generated files, included Makefile (you have to run ./configure again, then)
+make distclean
+#to see the generated executable files
+ls . bin
+#to see all generated files
+lsa *
+#aka 
+ls -alhrt *
+#generated programs are in the current dir after make
+#or inside bin after make install
+#look also at
+#src/README
