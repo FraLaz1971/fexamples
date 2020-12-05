@@ -7,6 +7,7 @@
 # provided all author and copyright information is retained. 
 # Erik Boman, Stanford, December 1995
 # many thanks to Erik Boman and Stanford University, California, USA.
+# https://upload.wikimedia.org/wikipedia/it/6/65/CardSeal-1.gif
 # it has been tested with the gnu gfortran compiler and gnu toolchain
 # to run with other compiler / toolchains , please refer to related manuals
 # to compile all the examples on unix-like OS, type
