@@ -20,6 +20,12 @@ gmake
 make install
 #to compile only one of them, say circle.f, type
 make circle
+# to use
+./circle
+#or when installed
+bin/circle
+#or
+./while <<< 150
 #to remove generated files type
 make clean
 #to remove ALL generated files, included Makefile (you have to run ./configure again, then)
