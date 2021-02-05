@@ -61,6 +61,6 @@ gfortran src/wages.f90 -o wages
 ./energies < data/masses.dat > data/energies.dat
 # doc/energymass.svg
 # doc/energymass.png
-# has been create with gnuplot using input and output file of the energies.g
-# example program
+# has been created with gnuplot using input and output file 
+# of the energies.f example program (path in unix-like syntax)
 gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies.dat' with lines"
