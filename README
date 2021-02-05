@@ -40,3 +40,12 @@ ls -alhrt *
 #or inside bin after make install
 #look also at
 #src/README
+# it's included a fortran90 example wages.f90
+# print wages and taxation of employees
+# computing from input data given 
+# interactively by the user
+# to compile it with gfortran
+gfortran src/wages.f90 -o wages
+# to run
+./wages
+
