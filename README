@@ -51,4 +51,5 @@ ls -alhrt *
 gfortran src/wages.f90 -o wages
 # to run
 ./wages
-
+# fortran 99 / 95 (and maybe 2003 2008) programs
+# should be compiled separately and a proper compiler is needed
