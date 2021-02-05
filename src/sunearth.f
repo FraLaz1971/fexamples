@@ -21,8 +21,8 @@ C SEC is the integer number of seconds
 C equivalent to fractional part of ELAP
             INTEGER MINU,SEC
             PARAMETER(LY=9.460730*10**12)
-            LM = LY/(365.25*1440)
-            DIST = 150*10**6
+            LM = LY/(365.25*1440.0)
+            DIST = 149.597871*10**6
             ELAP = DIST / LM
             MINU = ELAP
             SEC = (ELAP - MINU)*60
