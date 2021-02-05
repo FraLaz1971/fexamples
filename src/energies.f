@@ -18,11 +18,12 @@ C compute energies for each mass and save them in the ENERGY() array
             DO 20, I = 1, NMAX
                 ENERGY(I) = E(MASS(I))
 20          CONTINUE
-C prints out energy array values on stdout
+C prints out energy array values on stdoutse
 C terminal screen or reditected to a file
 C .\energies < infile.dat > outfile.dat
             DO 30, I = 1, NMAX
                 WRITE(*,*) ENERGY(I)
 30          CONTINUE
+            WRITE(*,*) 'End of Program.Bye.'
         END 
 
