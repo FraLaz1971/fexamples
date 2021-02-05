@@ -4,7 +4,7 @@ C ends the FULLNAME function
         PROGRAM ENERGIES
             DOUBLE PRECISION C,E,M
             INTEGER          I,NMAX
-C light speed constant 299792458 km/s D = double float real            
+C light speed constant 299792458 m/s D = double float real            
             PARAMETER(C=299792458D0,NMAX=14)
             DOUBLE PRECISION ENERGY(NMAX),MASS(NMAX)
             E(M) = M*C**2
