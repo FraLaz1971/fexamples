@@ -5,7 +5,7 @@ C ends the FULLNAME function
             DOUBLE PRECISION C,E,M
             INTEGER          I,NMAX
 C light speed constant 299792458 km/s D = double float real            
-            PARAMETER(C=299792458D0,NMAX=6)
+            PARAMETER(C=299792458D0,NMAX=14)
             DOUBLE PRECISION ENERGY(NMAX),MASS(NMAX)
             E(M) = M*C**2
 C reads NMAX masses values from stdin 

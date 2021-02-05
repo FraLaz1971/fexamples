@@ -57,3 +57,7 @@ gfortran src/wages.f90 -o wages
 # should be compiled separately and a proper compiler is needed
 # energies.f shows statement functions definition and usage
 ./energies < data/masses.dat
+# to save output on file
+./energies < data/masses.dat > data/energies.dat
+# doc/energymass.svg
+gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies.dat' with lines"
