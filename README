@@ -8,6 +8,8 @@
 # Erik Boman, Stanford, December 1995
 # many thanks to Erik Boman and Stanford University, California, USA.
 # https://en.wikipedia.org/wiki/Stanford_University
+# tutorial and explanations can be accessed also at
+# https://www.tat.physik.uni-tuebingen.de/~kley/lehre/ftn77/tutorial/index.html
 # it has been tested with the gnu gfortran compiler and gnu toolchain
 # to run with other compiler / toolchains , please refer to related manuals
 # there are included some f90 / f95 examples exercises
