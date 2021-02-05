@@ -1,3 +1,4 @@
+C	this program compute a sum of given input integers
 	program sumn
 		integer i, n, sum
 		sum = 0
