@@ -10,7 +10,11 @@
 # https://en.wikipedia.org/wiki/Stanford_University
 # it has been tested with the gnu gfortran compiler and gnu toolchain
 # to run with other compiler / toolchains , please refer to related manuals
-# to compile all the examples on unix-like OS, type
+# there are included some f90 / f95 examples exercises
+# inspired by the book written by Ian D. Chivers and Jane Sleightholme
+# "Introduction to Programming with Fortran", 2006
+#
+# to compile all the f77 examples on unix-like OS, type
 ./configure
 # then type
 make
@@ -41,9 +45,8 @@ ls -alhrt *
 #look also at
 #src/README
 # it's included a fortran90 example wages.f90
-# print wages and taxation of employees
-# computing from input data given 
-# interactively by the user
+# it prints wages and taxation of employees
+# computing from input data given interactively by the user
 # to compile it with gfortran
 gfortran src/wages.f90 -o wages
 # to run
