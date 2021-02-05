@@ -10,7 +10,7 @@ C light speed constant 299792458 km/s D = double float real
             E(M) = M*C**2
 C reads NMAX masses values from stdin 
 C interactively or from file using redirection (.\energies < infile.dat)
-            WRITE(*,*) 'Please, enter ', NMAX, 'mass values (kg)'
+            WRITE(*,*) '# Please, enter ', NMAX, 'mass values (kg)'
             DO 10, I = 1, NMAX
                 READ(*,*) MASS(I)
 10          CONTINUE
@@ -24,6 +24,6 @@ C .\energies < infile.dat > outfile.dat
             DO 30, I = 1, NMAX
                 WRITE(*,*) ENERGY(I)
 30          CONTINUE
-            WRITE(*,*) 'End of Program.Bye.'
+            WRITE(*,*) '# End of Program.Bye.'
         END 
 
