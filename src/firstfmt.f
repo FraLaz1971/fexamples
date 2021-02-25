@@ -1,0 +1,16 @@
+        PROGRAM FIRST
+C   THIS IS MY FIRST FORTRAN 77 PROGRAM 
+C   USING FORMATTING OUTPUT
+        REAL A,B,LSUM
+C   DEFINE A LABEL (= 100) FOR A SPECIFIC FORMAT
+100     FORMAT ('The sum of ', F10.6,' and ', F10.6,' is ', F10.6)
+        PRINT *, 'please type 2 numbers separed by space or comma'
+C   READ TWO NUMBERS FROM STDIN
+        READ *,A,B
+C   COMPUTE THE SUM OF A AND B
+        LSUM = A+B
+C   PRINT ON STDOUT USING WRITE
+        WRITE (*,100) A,B,LSUM
+C   PRINT ON STDOUT USING PRINT
+        PRINT 100, A,B,LSUM
+        END

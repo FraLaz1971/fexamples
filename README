@@ -64,3 +64,5 @@ gfortran src/wages.f90 -o wages
 # has been created with gnuplot using input and output file 
 # of the energies.f example program (path in unix-like syntax)
 gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies.dat' with lines"
+# exercise pg. 26 n 2.3 Ellis, 1982 fortran 77 structured programming
+./test23 <data/test23.dat
