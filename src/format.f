@@ -7,6 +7,7 @@ C shows usage of integers input output from/to stdin/stdout
 C using subroutines calls
 C and error handling examples
 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
 C subroutines section
 	SUBROUTINE READ1(MI,IV)
         INTEGER MI,IV
@@ -103,13 +104,15 @@ C       SET A DEFAULT VALUE TO N
         N=-1
 		CALL READ4(N,IV)
 		CALL MYWRITE(N,IV)
-C
+C end of program section
 777     CONTINUE
         PRINT *,''
 		PRINT *, 'Program ''format.f'' ended. Bye.'
 		STOP
+C formats used by main program
 101		FORMAT (I9)
 201		FORMAT (A,I9)
+C error handling section of main program
 999		CONTINUE
 		PRINT *, '999: N = ',N
         WRITE (0,*) '999: input format error.'
