@@ -54,6 +54,8 @@ C
 	END
 C
 	SUBROUTINE MYWRITE(MI,IV)
+C int argument variable MI takes the value to write
+C int argument variable IV takes the error code value
         INTEGER MI,IV
         WRITE (*,9201,ERR=9999,IOSTAT=IV) 'MYWRITE(): You entered ',MI
         GOTO 10000
@@ -67,8 +69,13 @@ C end of the subroutines section
 
 C MAIN PROGRAM STARTS HERE
 	PROGRAM format1
-C Showing FORMAT statement usage
-        INTEGER IV,WHERE
+C Showing READ,WRITE,FORMAT statement usage
+C making use of SUBROUTINEs and error handling
+        INTEGER N,IV,WHERE
+C int argument variable N takes the value to read and write
+C int argument variable IV takes the error code value
+C WHERE variable saves the label of the section
+C to be executed after error handling section during main
 C       SET A DEFAULT VALUE TO N
         N=-1
         ASSIGN 500 TO WHERE
