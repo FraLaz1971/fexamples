@@ -20,6 +20,7 @@ C ErrorCode = 5001  LIBERROR_OPTION_CONFLICT
             if (DEBUG.eq.1) print *, 'ErrorCode = ',IV
             print *, 'computing sum of first ',N,'numbers'
         end if
+C iterate for i that goes from 1 to n
 		do 10 i = 1, n
 			nsum = nsum + i
 			if (DEBUG.eq.1) print *,'i =', i,'sum =', nsum
