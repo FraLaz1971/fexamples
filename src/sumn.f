@@ -20,8 +20,10 @@ C   compiled with DEBUG=0 prints only final result
 10 		continue
         print *, 'the final sum is ', nsum
 		stop
+C program ends here
+C error handling routines section
 777     continue
-        write (0,*) 'error: illegal input value'
+        write (0,*) 'error: out-of-range input value'
         goto 2
         stop
 999     continue
