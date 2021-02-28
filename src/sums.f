@@ -1,9 +1,11 @@
-C	this program compute a sum of given input integers
+C	this f77 program compute a sum of the first n integers
+C   taking n as input given on standard input
 	program sums
 		integer i, n, sum
 		sum = 0
 C present program on beginning output screen
         write (*,*) '*****************************'
+        write (*,*) '**         sums.f          **'
         write (*,*) '** summing first n numbers **'
         write (*,*) '*****************************'
 C prompt input request to user
