@@ -111,7 +111,7 @@ C       SET A DEFAULT VALUE TO N
         N=-1
 		CALL READ4(N,IV)
 		CALL MYWRITE(N,IV)
-C end of program section
+C end-of-program section
 777     CONTINUE
         PRINT *,''
 		PRINT *, 'Program ''format.f'' ended. Bye.'
