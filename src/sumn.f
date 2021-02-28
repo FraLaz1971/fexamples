@@ -1,16 +1,19 @@
 C	this program compute a sum of first n integers
 C	this program compute a sum of given input integers
 	program sumn
-		integer i, n, nsum, IV,DEBUG
+		integer i, n, nsum, IV,DEBUG,STDERR
 C   compiled with DEBUG=1 prints intermediate sum
 C   compiled with DEBUG=0 prints only final result
 		DEBUG=1
+C   on gfortran stderr unit is 0
+C   change accordingly when using another compiler
+		STDERR=1
 		nsum = 0
 C input variable default value
 		n = -1
 2       continue		
         write (*,*) 'Please, type a natural number in [1:+INF)'
-        read (*,*,ERR=999,IOSTAT=IV) n
+        read (*,*,ERR=999,END=888,IOSTAT=IV) n
 C check possible error
 C ErrorCode = 5010  LIBERROR_READ_VALUE
 C ErrorCode = 5001  LIBERROR_OPTION_CONFLICT
@@ -23,20 +26,30 @@ C ErrorCode = 5001  LIBERROR_OPTION_CONFLICT
 C iterate for i that goes from 1 to n
 		do 10 i = 1, n
 			nsum = nsum + i
-			if (DEBUG.eq.1) print *,'i =', i,'sum =', nsum
+			if (DEBUG.eq.1) print *,'i =', i,' sum =', nsum
 10 		continue
         print *, 'the final sum is ', nsum
 		stop
 C program ends here
 C error handling routines section
+888     continue
+        write (STDERR,*) '888.error: end-of-file while reading input'
+        print *, '888.ErrorCode = ',IV
+        goto 2
+        stop
 777     continue
-        write (0,*) 'error: out-of-range input value'
-        print *, 'ErrorCode = ',IV
+        write (STDERR,*) '777.error: out-of-range input value'
+        print *, '777.ErrorCode = ',IV
         goto 2
         stop
 999     continue
-        write (0,*) 'error: bad input type. Exiting'
-        write (0,*) 'ErrorCode = ',IV
+        write (STDERR,*) '999.error: bad input type. Exiting'
+        write (STDERR,*) '999.ErrorCode = ',IV
+        write (STDERR,*) '999. input variable n = ',N
+        if (n.le.0) then
+            write (STDERR,*) '999.error: no legal input has been read'
+        end if
+10000   continue
         stop
 	end
 

@@ -15,12 +15,13 @@ TARGET8 = solvequad
 TARGET9 = strings
 TARGET10 = sum10
 TARGET11 = sumn
-TARGET12 = sunearth
-TARGET13 = test23
-TARGET14 = trunc
-TARGET15 = types
-TARGET16 = while
-TARGETS = while types trunc test23 sunearth sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first energies circle
+TARGET12 = sums
+TARGET13 = sunearth
+TARGET14 = test23
+TARGET15 = trunc
+TARGET16 = types
+TARGET17 = while
+TARGETS = while types trunc test23 sunearth sums sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first energies circle
 all: $(TARGETS)
 obj/$(TARGET0).o: src/circle.f
 	$(FC) -c   $< -o obj/circle.o $(FFLAGS)
@@ -70,25 +71,29 @@ obj/$(TARGET11).o: src/sumn.f
 	$(FC) -c   $< -o obj/sumn.o $(FFLAGS)
 $(TARGET11): obj/sumn.o
 	$(FC) -o sumn $< $(LDFLAGS)
-obj/$(TARGET12).o: src/sunearth.f
+obj/$(TARGET12).o: src/sums.f
+	$(FC) -c   $< -o obj/sums.o $(FFLAGS)
+$(TARGET12): obj/sums.o
+	$(FC) -o sums $< $(LDFLAGS)
+obj/$(TARGET13).o: src/sunearth.f
 	$(FC) -c   $< -o obj/sunearth.o $(FFLAGS)
-$(TARGET12): obj/sunearth.o
+$(TARGET13): obj/sunearth.o
 	$(FC) -o sunearth $< $(LDFLAGS)
-obj/$(TARGET13).o: src/test23.f
+obj/$(TARGET14).o: src/test23.f
 	$(FC) -c   $< -o obj/test23.o $(FFLAGS)
-$(TARGET13): obj/test23.o
+$(TARGET14): obj/test23.o
 	$(FC) -o test23 $< $(LDFLAGS)
-obj/$(TARGET14).o: src/trunc.f
+obj/$(TARGET15).o: src/trunc.f
 	$(FC) -c   $< -o obj/trunc.o $(FFLAGS)
-$(TARGET14): obj/trunc.o
+$(TARGET15): obj/trunc.o
 	$(FC) -o trunc $< $(LDFLAGS)
-obj/$(TARGET15).o: src/types.f
+obj/$(TARGET16).o: src/types.f
 	$(FC) -c   $< -o obj/types.o $(FFLAGS)
-$(TARGET15): obj/types.o
+$(TARGET16): obj/types.o
 	$(FC) -o types $< $(LDFLAGS)
-obj/$(TARGET16).o: src/while.f
+obj/$(TARGET17).o: src/while.f
 	$(FC) -c   $< -o obj/while.o $(FFLAGS)
-$(TARGET16): obj/while.o
+$(TARGET17): obj/while.o
 	$(FC) -o while $< $(LDFLAGS)
 install: all
 	mv $(TARGETS) bin
