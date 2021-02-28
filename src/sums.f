@@ -13,7 +13,7 @@ C	this program compute a sum of given input integers
 10 		continue
         write (*,*) '**************************************************
      &  *********'
-        print *,'** The sum of the first', i,'numbers is ', sum
+        print *,'** The sum of the first', i-1,'numbers is ', sum
         write (*,*) '**************************************************
      &  *********'
         write (*,*) 'End of the program. Bye.'
