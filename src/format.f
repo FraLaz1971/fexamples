@@ -1,3 +1,13 @@
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C author: fralaz1971  
+C based on the examples at page 100 of the book: Ellis, 1982,
+C "A structured approach to FORTRAN 77 programming"
+C progam format.f  
+C shows usage of integers input output from/to stdin/stdout
+C using subroutines calls
+C and error handling examples
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+C subroutines section
 	SUBROUTINE READ1(MI,IV)
         INTEGER MI,IV
 		PRINT *, 'READ1(): enter one integer number'
@@ -14,7 +24,7 @@ C
 		PRINT *, 'READ2(): enter one integer number'
         READ (*,2101,ERR=9999,IOSTAT=IV) MI
         GOTO 10000
-2101		FORMAT (I9)
+2101		FORMAT (I6)
 9999	WRITE (0,*) 'READ2(): input format error.'
 		WRITE (0,*) 'READ2(): ErrorCode =',IV
 10000    CONTINUE
@@ -25,7 +35,7 @@ C
 		PRINT *, 'READ3(): enter one integer number'
         READ (UNIT=*,FMT=3101,ERR=9999,IOSTAT=IV) MI
         GOTO 10000
-3101		FORMAT (I9)
+3101		FORMAT (I4)
 9999	WRITE (0,*) 'READ3(): input format error.'
 		WRITE (0,*) 'READ3(): ErrorCode =',IV
 10000    CONTINUE
@@ -36,7 +46,7 @@ C
 		PRINT *, 'READ4(): enter one integer number'
         READ (FMT=4101,UNIT=5,ERR=9999,IOSTAT=IV) MI
         GOTO 10000
-4101		FORMAT (I9)
+4101		FORMAT (I)
 9999	WRITE (0,*) 'READ4(): input format error.'
 		WRITE (0,*) 'READ4(): ErrorCode =',IV
 10000    CONTINUE
@@ -52,7 +62,9 @@ C
 		WRITE (0,*) 'MYWRITE(): ErrorCode =',IV
 10000    CONTINUE
 	END
+C end of the subroutines section
 
+C MAIN PROGRAM STARTS HERE
 	PROGRAM format1
 C Showing FORMAT statement usage
         INTEGER IV,WHERE
