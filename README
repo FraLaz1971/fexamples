@@ -15,7 +15,8 @@
 # there are included some f90 / f95 examples exercises
 # inspired by the book written by Ian D. Chivers and Jane Sleightholme
 # "Introduction to Programming with Fortran", 2006
-#
+# programs has been also compiled and tested 
+# using Salford FTN77  compiler for MicroSoft Windows 32bit.
 # to compile all the f77 examples on unix-like OS, type
 ./configure
 # then type
@@ -66,3 +67,6 @@ gfortran src/wages.f90 -o wages
 gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies.dat' with lines"
 # exercise pg. 26 n 2.3 Ellis, 1982 fortran 77 structured programming
 ./test23 <data/test23.dat
+# sumn.f sums first n integers , input n in [1:+INF) from stdin
+# setting stderr output to output file 2 make save on ascii file using gfortran
+# and on screen using ftn77
