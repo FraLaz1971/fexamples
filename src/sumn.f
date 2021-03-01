@@ -7,7 +7,7 @@ C   compiled with DEBUG=0 prints only final result
 		DEBUG=1
 C   on gfortran stderr unit is 0
 C   change accordingly to the compiler you use
-		STDERR=2
+		STDERR=1
 		nsum = 0
 C input variable default value
 		n = -1
