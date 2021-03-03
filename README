@@ -70,3 +70,55 @@ gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies
 # sumn.f sums first n integers , input n in [1:+INF) from stdin
 # setting stderr output to output file 2 make save on ascii file using gfortran
 # and on screen using ftn77
+../fexamples
+├── bin
+├── config
+│   ├── configure-gfortran.sh
+│   ├── configure-mac-gfortran.sh
+│   ├── configure-win-i686-gfortran.sh
+│   └── configure-win-x86_64-gfortran.sh
+├── configure
+├── data
+│   ├── energies.dat
+│   ├── masses.dat
+│   ├── points.dat
+│   ├── sum10.dat
+│   ├── test23bis.dat
+│   └── test23.dat
+├── doc
+│   ├── energies.dia
+│   ├── energies.png
+│   ├── energymass.png
+│   └── energymass.svg
+├── LICENSE
+├── obj
+├── README
+└── src
+    ├── circle.f
+    ├── circles.f90
+    ├── energies.f
+    ├── filei.f
+    ├── fileio.f
+    ├── fileo.f
+    ├── first.f
+    ├── firstfmt.f
+    ├── format.f
+    ├── getfilnam.f
+    ├── getfilnam.for
+    ├── inpdat.f
+    ├── matrix.f
+    ├── README
+    ├── solvequad.f
+    ├── stdio.f
+    ├── strings.f
+    ├── sum10.f
+    ├── sumn.f
+    ├── sums.f
+    ├── sunearth.f
+    ├── test23.f
+    ├── trunc.f
+    ├── types.f
+    ├── wages.f90
+    └── while.f
+
+6 directories, 43 files

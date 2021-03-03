@@ -1,0 +1,8 @@
+C FORTRAN 77 example on stdin / stdout / stderr usage
+C by fralaz1971 , for more info: https://en.wikipedia.org/wiki/Standard_streams#1950s:_Fortran
+      PROGRAM MAIN
+        INTEGER NUMBER
+        INTEGER INPUT_UNIT, OUTPUT_UNIT, ERROR_UNIT
+        INPUT_UNIT =  5
+        OUTPUT_UNIT = 6
+        ERROR_UNIT=0

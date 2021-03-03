@@ -1,0 +1,31 @@
+C FORTRAN 77 example on stdin / stdout / stderr usage
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') '*****************************'
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') '** program stdio.f : shows' 
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') '** the usage of stdin/stdout' 
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') '** input/output' 
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') '*****************************' 
+10      CONTINUE
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') 
+     &  'Please type an integer number in [-499999:499999]'
+        READ(UNIT=*,FMT=*,ERR=999) NUMBER
+        IF ( NUMBER.LT.-499998 .OR. NUMBER.GT.499999 ) THEN 
+C PROMPT FOR NEW INPUT UNTIL IT IS NOT IN RANGE
+            WRITE(UNIT=ERROR_UNIT,FMT='(A)') 
+     &      'MAIN.error: out-of-range input' 
+            GOTO 10
+        ELSE
+            WRITE(UNIT=ERROR_UNIT,FMT='(A,I6,A,I6)') 'The double of ',
+     &      NUMBER,' is ', 2*NUMBER
+            WRITE(UNIT=OUTPUT_UNIT,FMT='(I6)')  2*NUMBER
+         END IF
+C GO TO REGULAR PROGRAM END
+        GOTO 10000
+C HANDLE WRONG INPUT TYPE
+999     WRITE(UNIT=ERROR_UNIT,FMT='(A)') 
+     &  'MAIN.error: bad numeric type input' 
+        GOTO 10
+C PROGRAM END
+10000   CONTINUE
+        WRITE(UNIT=ERROR_UNIT,FMT='(A)') 'Bye.' 
+        CLOSE(UNIT=ERROR_UNIT)
+      END
