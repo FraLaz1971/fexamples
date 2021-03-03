@@ -42,16 +42,16 @@ C
 10000    CONTINUE
 	END
 C
-	SUBROUTINE READ4(MI,IV)
-        INTEGER MI,IV
-		PRINT *, 'READ4(): enter one integer number'
-        READ (FMT=4101,UNIT=5,ERR=9999,IOSTAT=IV) MI
-        GOTO 10000
-4101		FORMAT (I)
-9999	WRITE (0,*) 'READ4(): input format error.'
-		WRITE (0,*) 'READ4(): ErrorCode =',IV
-10000    CONTINUE
-	END
+        SUBROUTINE READ4(MI,IV)
+            INTEGER MI,IV
+            PRINT *, 'READ4(): enter one integer number'
+            READ (FMT=4101,UNIT=5,ERR=9999,IOSTAT=IV) MI
+            GOTO 10000
+4101		FORMAT (I12)
+9999	    WRITE (0,*) 'READ4(): input format error.'
+            WRITE (0,*) 'READ4(): ErrorCode =',IV
+10000       CONTINUE
+        END
 C
 	SUBROUTINE MYWRITE(MI,IV)
 C int argument variable MI takes the value to write
@@ -59,6 +59,7 @@ C int argument variable IV takes the error code value
         INTEGER MI,IV
         WRITE (*,9201,ERR=9999,IOSTAT=IV) 'MYWRITE(): You entered ',MI
         GOTO 10000
+4101		FORMAT (I12)
 9101		FORMAT (I9)
 9201		FORMAT (A,I9)
 9999	WRITE (0,*) 'MYWRITE(): output format error.'

@@ -34,7 +34,7 @@ fi
 echo "generated Makefile"
 ls -lhrt Makefile*
 echo "project cnumerics configured"
-echo "if you are on GNU/Linux or Apple MacOS, you can now run:"
+echo "if you are on GNU/Linux or Apple MacOSX, you can now run:"
 echo "make"
 echo "if you are on Microsoft Windows, you can now run:"
 echo "mingw32-make"
