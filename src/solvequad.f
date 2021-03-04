@@ -23,12 +23,12 @@ C
 C
 C Echo the coefficients to make sure they are entered correctly.
 C
-	WRITE (*,100) 'The coefficients are: ',  A, B, C
+	WRITE (*,200) 'The coefficients are: ',  A, B, C
 C
 C Check the discriminant and calculate its roots.
 C
-	DISCR = B**2.0 - 4.0*A*C
-	WRITE (*,*) 'Discriminant (= B**2 - 4*A*C) is ', DISCR
+	DISCR = B**2 - 4.0*A*C
+	WRITE (*,'(A,F15.6)') 'Discriminant (= B**2 - 4*A*C) is ', DISCR
 	IF ( DISCR .LT. 0) THEN
 		WRITE (*,*) 'This equation has complex roots:'
 		WRITE (*,*) 'X_1 = ', -B/(2.0*A),  '+i *',
@@ -37,7 +37,7 @@ C
      &	SQRT(ABS(DISCR))/(2.*A)
       ELSE IF (ABS(DISCR).LT.0.000001) THEN
 		WRITE (*,*)  'Equation with single repeated real root:'
-		WRITE (*,*)  'X_1 = X_2 =', -B/(2.0*A)
+		WRITE (*,'(A,F15.6)')  'X_1 = X_2 =', -B/(2.0*A)
 	ELSE IF ( DISCR .GT. 0.0) THEN
         WRITE (*,*)  'Equation with two distinct real roots:'
             WRITE (*,*) 'X_1 =', (-B + SQRT(ABS(DISCR)))/(2.0*A)
@@ -45,4 +45,5 @@ C
 	END IF
 C
 100 	FORMAT (1X,A,3F10.6)
+200 	FORMAT (A,F15.6,' ',F15.6,' ',F15.6,' ')
 	END
