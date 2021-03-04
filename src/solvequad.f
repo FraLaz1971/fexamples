@@ -7,8 +7,17 @@ C and solves for the roots of the equation (FORTRAN 77 style).
 C
 C Get the coefficients of the quadratic equation.
 C
-	WRITE (*,*) 'Enter the coefficients A  B and C: '
-	READ (*,*) A, B, C
+        REAL A,B,C,DISCR
+        WRITE (*,*) 'Computing solutions for'
+        WRITE (*,*) 'Equation A * X**2 + B * X + C '
+90      WRITE (*,*) 'Enter the coefficients A B and C: '
+        WRITE (*,*) '(with A not eq. to 0) :'
+	    READ (*,*) A, B, C
+C
+	    IF ((A - 0).LT.0.000001) THEN 
+            WRITE (*,*) 'Illegal value for coeff. A'
+            GOTO 90
+	    END IF
 C
 C Echo the coefficients to make sure they are entered correctly.
 C
@@ -18,17 +27,20 @@ C
 C Check the discriminant and calculate its roots.
 C
 	DISCR = B**2 - 4.*A*C
+	WRITE (*,*) 'Discriminant (= B**2 - 4.*A*C) is ', DISCR
 	IF ( DISCR .LT. 0) THEN
-		WRITE (*,*)  'This equation has complex roots:'
-		WRITE (*,*)  'X = ', -B/(2.*A),  '+i *', SQRT(ABS(DISCR))/(2.*A)
-		WRITE (*,*)  'X = ', -B/(2.*A),  '-i *', SQRT(ABS(DISCR))/(2.*A)
-		ELSE IF ( (B**2 - 4.*A*C) .EQ. 0) THEN
-		WRITE (*,*)  'This equation has a single repeated real root:'
-		WRITE (*,*)  'X = ', -B/(2.*A)
+		WRITE (*,*) 'This equation has complex roots:'
+		WRITE (*,*) 'X_1 = ', -B/(2.*A),  '+i *',
+     &	SQRT(ABS(DISCR))/(2.*A)
+		WRITE (*,*)  'X_2 = ', -B/(2.*A),  '-i *',
+     &	SQRT(ABS(DISCR))/(2.*A)
+		ELSE IF ( ((B**2 - 4.*A*C) - 0).LT.0.000001) THEN
+		WRITE (*,*)  'Equation with single repeated real root:'
+		WRITE (*,*)  'X_1 = X_2 =', -B/(2.*A)
 	ELSE
-		WRITE (*,*)  'This equation has two distinct real roots:'
-		WRITE (*,*) 'X =', (-B + SQRT(ABS(DISCR)))/(2.*A)
-		WRITE (*,*) 'X =', (-B - SQRT(ABS(DISCR)))/(2.*A)
+		WRITE (*,*)  'Equation with two distinct real roots:'
+		WRITE (*,*) 'X_1 =', (-B + SQRT(ABS(DISCR)))/(2.*A)
+		WRITE (*,*) 'X_2 =', (-B - SQRT(ABS(DISCR)))/(2.*A)
 	END IF
 C
 	END
