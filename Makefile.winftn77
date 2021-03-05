@@ -1,0 +1,182 @@
+FC = ftn77
+FL = slink
+EEXE = .exe
+OEXE = .obj
+SRC = $(wildcard src/*.f)
+OBJ = *.obj
+FFLAGS = 
+FDFLAGS = /out:
+LDFLAGS = 
+SRCDIR = src
+OBJDIR = obj
+BINDIR = bin
+RM = del
+MV = move
+TARGET0 = circle
+TARGET1 = energies
+TARGET2 = filei
+TARGET3 = fileio
+TARGET4 = fileir
+TARGET5 = fileo
+TARGET6 = fileoo
+TARGET7 = fileorig
+TARGET8 = first
+TARGET9 = firstfmt
+TARGET10 = format
+TARGET11 = getfilnam
+TARGET12 = inpdat
+TARGET13 = matrix
+TARGET14 = solvequad
+TARGET15 = strings
+TARGET16 = sum10
+TARGET17 = sumn
+TARGET18 = sums
+TARGET19 = sunearth
+TARGET20 = survrec
+TARGET21 = test23
+TARGET22 = trunc
+TARGET23 = types
+TARGET24 = while
+TARGETS = while types trunc test23 survrec sunearth sums sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first fileorig fileoo fileo fileir fileio filei energies circle
+RMTARGETS = while.exe types.exe trunc.exe test23.exe survrec.exe sunearth.exe sums.exe sumn.exe sum10.exe strings.exe solvequad.exe matrix.exe inpdat.exe getfilnam.exe format.exe firstfmt.exe first.exe fileorig.exe fileoo.exe fileo.exe fileir.exe fileio.exe filei.exe energies.exe circle.exe
+all: $(RMTARGETS)
+.PHONY: $(TARGETS) clean distclean install
+$(TARGET0)$(OEXE): $(SRCDIR)\circle.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET0)$(EEXE): $(TARGET0)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET0)$(EEXE) $(LDFLAGS)
+$(TARGET0): $(TARGET0)$(EEXE)
+$(TARGET1)$(OEXE): $(SRCDIR)\energies.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET1)$(EEXE): $(TARGET1)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET1)$(EEXE) $(LDFLAGS)
+$(TARGET1): $(TARGET1)$(EEXE)
+$(TARGET2)$(OEXE): $(SRCDIR)\filei.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET2)$(EEXE): $(TARGET2)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET2)$(EEXE) $(LDFLAGS)
+$(TARGET2): $(TARGET2)$(EEXE)
+$(TARGET3)$(OEXE): $(SRCDIR)\fileio.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET3)$(EEXE): $(TARGET3)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET3)$(EEXE) $(LDFLAGS)
+$(TARGET3): $(TARGET3)$(EEXE)
+$(TARGET4)$(OEXE): $(SRCDIR)\fileir.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET4)$(EEXE): $(TARGET4)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET4)$(EEXE) $(LDFLAGS)
+$(TARGET4): $(TARGET4)$(EEXE)
+$(TARGET5)$(OEXE): $(SRCDIR)\fileo.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET5)$(EEXE): $(TARGET5)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET5)$(EEXE) $(LDFLAGS)
+$(TARGET5): $(TARGET5)$(EEXE)
+$(TARGET6)$(OEXE): $(SRCDIR)\fileoo.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET6)$(EEXE): $(TARGET6)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET6)$(EEXE) $(LDFLAGS)
+$(TARGET6): $(TARGET6)$(EEXE)
+$(TARGET7)$(OEXE): $(SRCDIR)\fileorig.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET7)$(EEXE): $(TARGET7)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET7)$(EEXE) $(LDFLAGS)
+$(TARGET7): $(TARGET7)$(EEXE)
+$(TARGET8)$(OEXE): $(SRCDIR)\first.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET8)$(EEXE): $(TARGET8)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET8)$(EEXE) $(LDFLAGS)
+$(TARGET8): $(TARGET8)$(EEXE)
+$(TARGET9)$(OEXE): $(SRCDIR)\firstfmt.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET9)$(EEXE): $(TARGET9)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET9)$(EEXE) $(LDFLAGS)
+$(TARGET9): $(TARGET9)$(EEXE)
+$(TARGET10)$(OEXE): $(SRCDIR)\format.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET10)$(EEXE): $(TARGET10)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET10)$(EEXE) $(LDFLAGS)
+$(TARGET10): $(TARGET10)$(EEXE)
+$(TARGET11)$(OEXE): $(SRCDIR)\getfilnam.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET11)$(EEXE): $(TARGET11)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET11)$(EEXE) $(LDFLAGS)
+$(TARGET11): $(TARGET11)$(EEXE)
+$(TARGET12)$(OEXE): $(SRCDIR)\inpdat.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET12)$(EEXE): $(TARGET12)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET12)$(EEXE) $(LDFLAGS)
+$(TARGET12): $(TARGET12)$(EEXE)
+$(TARGET13)$(OEXE): $(SRCDIR)\matrix.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET13)$(EEXE): $(TARGET13)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET13)$(EEXE) $(LDFLAGS)
+$(TARGET13): $(TARGET13)$(EEXE)
+$(TARGET14)$(OEXE): $(SRCDIR)\solvequad.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET14)$(EEXE): $(TARGET14)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET14)$(EEXE) $(LDFLAGS)
+$(TARGET14): $(TARGET14)$(EEXE)
+$(TARGET15)$(OEXE): $(SRCDIR)\strings.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET15)$(EEXE): $(TARGET15)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET15)$(EEXE) $(LDFLAGS)
+$(TARGET15): $(TARGET15)$(EEXE)
+$(TARGET16)$(OEXE): $(SRCDIR)\sum10.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET16)$(EEXE): $(TARGET16)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET16)$(EEXE) $(LDFLAGS)
+$(TARGET16): $(TARGET16)$(EEXE)
+$(TARGET17)$(OEXE): $(SRCDIR)\sumn.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET17)$(EEXE): $(TARGET17)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET17)$(EEXE) $(LDFLAGS)
+$(TARGET17): $(TARGET17)$(EEXE)
+$(TARGET18)$(OEXE): $(SRCDIR)\sums.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET18)$(EEXE): $(TARGET18)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET18)$(EEXE) $(LDFLAGS)
+$(TARGET18): $(TARGET18)$(EEXE)
+$(TARGET19)$(OEXE): $(SRCDIR)\sunearth.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET19)$(EEXE): $(TARGET19)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET19)$(EEXE) $(LDFLAGS)
+$(TARGET19): $(TARGET19)$(EEXE)
+$(TARGET20)$(OEXE): $(SRCDIR)\survrec.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET20)$(EEXE): $(TARGET20)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET20)$(EEXE) $(LDFLAGS)
+$(TARGET20): $(TARGET20)$(EEXE)
+$(TARGET21)$(OEXE): $(SRCDIR)\test23.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET21)$(EEXE): $(TARGET21)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET21)$(EEXE) $(LDFLAGS)
+$(TARGET21): $(TARGET21)$(EEXE)
+$(TARGET22)$(OEXE): $(SRCDIR)\trunc.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET22)$(EEXE): $(TARGET22)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET22)$(EEXE) $(LDFLAGS)
+$(TARGET22): $(TARGET22)$(EEXE)
+$(TARGET23)$(OEXE): $(SRCDIR)\types.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET23)$(EEXE): $(TARGET23)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET23)$(EEXE) $(LDFLAGS)
+$(TARGET23): $(TARGET23)$(EEXE)
+$(TARGET24)$(OEXE): $(SRCDIR)\while.f
+	$(FC) $< $(FFLAGS) 
+$(TARGET24)$(EEXE): $(TARGET24)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET24)$(EEXE) $(LDFLAGS)
+$(TARGET24): $(TARGET24)$(EEXE)
+TARGET25 = stdio
+$(SRCDIR)\stdio.f: $(SRCDIR)\stdio0.txt $(SRCDIR)\stdio1.txt
+	 cat $(SRCDIR)\stdio1.txt $(SRCDIR)\stdio.txt >$(SRCDIR)\stdio.f
+$(TARGET25)$(OEXE): $(SRCDIR)\$(TARGET25).f
+	$(FC) $< $(FFLAGS) 
+$(TARGET25)$(EEXE): $(TARGET25)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET25)$(EEXE) $(LDFLAGS)
+$(TARGET25): $(TARGET25)$(EEXE)
+install: all
+	 $(MV) $(TARGETS) $(BINDIR)
+clean:
+	$(RM) $(OBJ) $(RMTARGETS) *.dat *.csv fort.* *.log
+distclean: clean
+	$(RM) $(BINDIR)\* Makefile*

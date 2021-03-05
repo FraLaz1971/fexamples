@@ -3,10 +3,11 @@ C TMR Ellis, 1982, 'A structured approach to FORTRAN 77 programming'
 C create an input file serving as input 
 C of the survey example 6.2 of TMR Ellis, 1982
 
-       PROGRAM survrec
+       PROGRAM surea
 C file input/output examples
         REAL X
         INTEGER LABL, IOV
+        CHARACTER*80 ROW
 C RCOUNT is the counter on records
         INTEGER RCOUNT 
 C Name          columns 1-20
@@ -20,11 +21,17 @@ C Height (cm)   columns 31-33
 C Weight (kg)   columns 36-41  (nnn.dd)
         REAL WEIGHT
 C END OF DATASET ---> 9 in column 23
-C saves dataset to a file called SURVEY.dat
+C saves dataset to a file called SUROUT.dat
 C opened on unit number 9
-        OPEN(UNIT=9,FILE='SURVEY.dat',ERR=999)
+        OPEN(UNIT=9,FILE='SUROUT.dat',ERR=999)
+C reads from a file with unit 9 named SUREAin.dat
+        OPEN(UNIT=10,FILE='SURVEYin.dat',ERR=999, STATUS='OLD')
         PRINT *,'filei.10: before writing executed', COUNT
 C assign a male record as example
+C skip intestation rows
+        READ(UNIT=10,FMT=*,ERR=777,IOSTAT=IOV) ROW
+        READ(UNIT=10,FMT=*,ERR=777,IOSTAT=IOV) ROW
+
 30      CONTINUE
         ASSIGN 40 TO LABL
         NAME='Alessio Pennole'
@@ -54,8 +61,15 @@ C assign a end-of-dataset record.
         WEIGHT=79.83
         WRITE(UNIT=9,FMT=110,ERR=777,IOSTAT=IOV) NAME,SEX,AGE,
      &  HEIGHT,WEIGHT  
-        WRITE(*,*) 'filei.10: wrote record',RCOUNT
-        PRINT *,'filei.10: after first read executed'
+        PRINT *,'filei.10: after first write executed'
+        DO 300,RCOUNT=1,1000
+            READ(UNIT=10,FMT=110,ERR=777,IOSTAT=IOV)
+     &      NAME,SEX,AGE,HEIGHT,WEIGHT  
+            WRITE(UNIT=9,FMT=110,ERR=777,IOSTAT=IOV)
+     &      NAME,SEX,AGE,HEIGHT,WEIGHT  
+            WRITE(*,*) 'filei.10: wrote record',RCOUNT
+300     CONTINUE
+C write end-of-dataset record
 60      CONTINUE
         ASSIGN 70 TO LABL
         NAME='XXX     YYY    '
@@ -71,6 +85,7 @@ C assign a end-of-dataset record.
 ! 30      CONTINUE
 !         PRINT *,'filei.30: program ends correctly '
         CLOSE(UNIT=9)
+        CLOSE(UNIT=10)
 C handle error in reading from input file
         GOTO 1000
 110     FORMAT(A20,2X,I1,3X,I2,2X,I3,2X,F5.2)
@@ -101,7 +116,7 @@ C Weight (kg)   columns 36-41  (nnn.dd)
         GOTO LABL
 c handle error can't open input file
 999     CONTINUE
-        PRINT *,'filei.999: Error in opening file SURVEY.dat'
+        PRINT *,'filei.999: Error in opening file'
         PRINT *,'filei.999: maybe the path is wrong?'
         PRINT *,'filei.999: or the disk is full?'
         PRINT *,'filei.999: IOSTAT value is', IOV

@@ -9,11 +9,11 @@ C compile and run fileoo.f to create the input file
 C file input/output examples
         INTEGER V1,V2,V3,V4,V5,V6,V7,V8,V9
         INTEGER I,J,K
-        INTEGER WHERE, IOV
+        INTEGER LABL, IOV
 C open a file called MILES-ELLIS.dat and assign
 C to it unit number 10
         OPEN(UNIT=10,FILE='MILES-ELLIS.dat',STATUS='OLD',ERR=999)
-        ASSIGN 20 TO WHERE
+        ASSIGN 20 TO LABL
         PRINT *,'filei.10: before first read executed'
         READ(UNIT=10,FMT=102,ERR=777,END=888,IOSTAT=IOV) 
      &   V1,V2,V3,V4,V5,V6,V7,V8,V9
@@ -23,27 +23,27 @@ C to it unit number 10
 20      CONTINUE
         REWIND 10
         PRINT *,'filei.20: before second read executed'
-        ASSIGN 30 TO WHERE
+        ASSIGN 30 TO LABL
         READ(UNIT=10,FMT=103,ERR=777,END=888,IOSTAT=IOV) V1
         PRINT *,'filei.20: read ', V1
         PRINT *,'filei.20: after second read executed'
 30      CONTINUE
         REWIND 10
-        ASSIGN 40 TO WHERE
+        ASSIGN 40 TO LABL
         PRINT *,'filei.30: before third read executed'
         READ(UNIT=10,FMT=104,ERR=777,END=888,IOSTAT=IOV) V1,V2
         PRINT *,'filei.30: read ', V1,V2
         PRINT *,'filei.30: after third read executed'
 40      CONTINUE
         REWIND 10
-        ASSIGN 50 TO WHERE
+        ASSIGN 50 TO LABL
        PRINT *,'filei.40: before fourth read executed'
         READ(UNIT=10,FMT=105,ERR=777,END=888,IOSTAT=IOV) I,J,K
         PRINT *,'filei.40: read ', I,J,K
        PRINT *,'filei.40: after fourth read executed'
 50      CONTINUE
         REWIND 10
-        ASSIGN 60 TO WHERE
+        ASSIGN 60 TO LABL
         PRINT *,'filei.50: before fifth read executed'
 C if string 123456789 is in input file
 C expect to read
@@ -74,7 +74,7 @@ C handle error in reading from input file
         ELSE IF (IOV .EQ. -1) THEN
             PRINT *,'filei.777: END-OF-FILE reached!'
         END IF
-        GOTO WHERE
+        GOTO LABL
 888     CONTINUE
         PRINT *,'filei.888: Error in reading from file MILES-ELLIS.dat'
         PRINT *,'filei.888: IOSTAT value is', IOV
@@ -82,7 +82,7 @@ C handle error in reading from input file
             PRINT *,'filei.888: END-OF-FILE reached!'
             PRINT *,'filei.88: maybe the file has 0 size?'
         END IF
-        GOTO WHERE
+        GOTO LABL
 c handle error can't open input file
 999     CONTINUE
         PRINT *,'filei.999: Error in opening file MILES-ELLIS.dat'
