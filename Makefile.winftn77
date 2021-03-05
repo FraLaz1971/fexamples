@@ -32,13 +32,14 @@ TARGET16 = sum10
 TARGET17 = sumn
 TARGET18 = sums
 TARGET19 = sunearth
-TARGET20 = survrec
-TARGET21 = test23
-TARGET22 = trunc
-TARGET23 = types
-TARGET24 = while
-TARGETS = while types trunc test23 survrec sunearth sums sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first fileorig fileoo fileo fileir fileio filei energies circle
-RMTARGETS = while.exe types.exe trunc.exe test23.exe survrec.exe sunearth.exe sums.exe sumn.exe sum10.exe strings.exe solvequad.exe matrix.exe inpdat.exe getfilnam.exe format.exe firstfmt.exe first.exe fileorig.exe fileoo.exe fileo.exe fileir.exe fileio.exe filei.exe energies.exe circle.exe
+TARGET20 = surea
+TARGET21 = survrec
+TARGET22 = test23
+TARGET23 = trunc
+TARGET24 = types
+TARGET25 = while
+TARGETS = while types trunc test23 survrec surea sunearth sums sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first fileorig fileoo fileo fileir fileio filei energies circle
+RMTARGETS = while.exe types.exe trunc.exe test23.exe survrec.exe surea.exe sunearth.exe sums.exe sumn.exe sum10.exe strings.exe solvequad.exe matrix.exe inpdat.exe getfilnam.exe format.exe firstfmt.exe first.exe fileorig.exe fileoo.exe fileo.exe fileir.exe fileio.exe filei.exe energies.exe circle.exe
 all: $(RMTARGETS)
 .PHONY: $(TARGETS) clean distclean install
 $(TARGET0)$(OEXE): $(SRCDIR)\circle.f
@@ -141,39 +142,44 @@ $(TARGET19)$(OEXE): $(SRCDIR)\sunearth.f
 $(TARGET19)$(EEXE): $(TARGET19)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET19)$(EEXE) $(LDFLAGS)
 $(TARGET19): $(TARGET19)$(EEXE)
-$(TARGET20)$(OEXE): $(SRCDIR)\survrec.f
+$(TARGET20)$(OEXE): $(SRCDIR)\surea.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET20)$(EEXE): $(TARGET20)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET20)$(EEXE) $(LDFLAGS)
 $(TARGET20): $(TARGET20)$(EEXE)
-$(TARGET21)$(OEXE): $(SRCDIR)\test23.f
+$(TARGET21)$(OEXE): $(SRCDIR)\survrec.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET21)$(EEXE): $(TARGET21)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET21)$(EEXE) $(LDFLAGS)
 $(TARGET21): $(TARGET21)$(EEXE)
-$(TARGET22)$(OEXE): $(SRCDIR)\trunc.f
+$(TARGET22)$(OEXE): $(SRCDIR)\test23.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET22)$(EEXE): $(TARGET22)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET22)$(EEXE) $(LDFLAGS)
 $(TARGET22): $(TARGET22)$(EEXE)
-$(TARGET23)$(OEXE): $(SRCDIR)\types.f
+$(TARGET23)$(OEXE): $(SRCDIR)\trunc.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET23)$(EEXE): $(TARGET23)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET23)$(EEXE) $(LDFLAGS)
 $(TARGET23): $(TARGET23)$(EEXE)
-$(TARGET24)$(OEXE): $(SRCDIR)\while.f
+$(TARGET24)$(OEXE): $(SRCDIR)\types.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET24)$(EEXE): $(TARGET24)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET24)$(EEXE) $(LDFLAGS)
 $(TARGET24): $(TARGET24)$(EEXE)
-TARGET25 = stdio
-$(SRCDIR)\stdio.f: $(SRCDIR)\stdio0.txt $(SRCDIR)\stdio1.txt
-	 cat $(SRCDIR)\stdio1.txt $(SRCDIR)\stdio.txt >$(SRCDIR)\stdio.f
-$(TARGET25)$(OEXE): $(SRCDIR)\$(TARGET25).f
+$(TARGET25)$(OEXE): $(SRCDIR)\while.f
 	$(FC) $< $(FFLAGS) 
 $(TARGET25)$(EEXE): $(TARGET25)$(OEXE)
 	$(FL) $< $(FDFLAGS)$(TARGET25)$(EEXE) $(LDFLAGS)
 $(TARGET25): $(TARGET25)$(EEXE)
+TARGET26 = stdio
+$(SRCDIR)\stdio.f: $(SRCDIR)\stdio0.txt $(SRCDIR)\stdio1.txt
+	 cat $(SRCDIR)\stdio1.txt $(SRCDIR)\stdio.txt >$(SRCDIR)\stdio.f
+$(TARGET26)$(OEXE): $(SRCDIR)\$(TARGET26).f
+	$(FC) $< $(FFLAGS) 
+$(TARGET26)$(EEXE): $(TARGET26)$(OEXE)
+	$(FL) $< $(FDFLAGS)$(TARGET26)$(EEXE) $(LDFLAGS)
+$(TARGET26): $(TARGET26)$(EEXE)
 install: all
 	 $(MV) $(TARGETS) $(BINDIR)
 clean:
