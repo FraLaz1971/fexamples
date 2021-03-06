@@ -73,52 +73,79 @@ gnuplot -p -e "set logscale y; plot 'data/masses.dat' with lines, 'data/energies
 ../fexamples
 ├── bin
 ├── config
+│   ├── bin
 │   ├── configure-gfortran.sh
 │   ├── configure-mac-gfortran.sh
+│   ├── configure-win-ftn77.sh
 │   ├── configure-win-i686-gfortran.sh
-│   └── configure-win-x86_64-gfortran.sh
+│   ├── configure-win-x86_64-gfortran.sh
+│   └── obj
 ├── configure
 ├── data
+│   ├── biostats2.csv
+│   ├── biostats.csv
+│   ├── biostatsnew.csv
 │   ├── energies.dat
 │   ├── masses.dat
+│   ├── MILES-ELLIS_big.dat
+│   ├── MILES-ELLIS.dat
+│   ├── MILES-ELLIS-dots.dat
 │   ├── points.dat
 │   ├── sum10.dat
+│   ├── SUROUT.dat
+│   ├── SURVEY2.dat
+│   ├── SURVEY.dat
+│   ├── SURVEYin.dat
 │   ├── test23bis.dat
-│   └── test23.dat
+│   ├── test23.dat
+│   └── type1tofinal.awk
 ├── doc
 │   ├── energies.dia
 │   ├── energies.png
 │   ├── energymass.png
 │   └── energymass.svg
 ├── LICENSE
+├── Makefile
+├── Makefile.lnx
+├── Makefile.winftn77
 ├── obj
 ├── README
-└── src
-    ├── circle.f
-    ├── circles.f90
-    ├── energies.f
-    ├── filei.f
-    ├── fileio.f
-    ├── fileo.f
-    ├── first.f
-    ├── firstfmt.f
-    ├── format.f
-    ├── getfilnam.f
-    ├── getfilnam.for
-    ├── inpdat.f
-    ├── matrix.f
-    ├── README
-    ├── solvequad.f
-    ├── stdio.f
-    ├── strings.f
-    ├── sum10.f
-    ├── sumn.f
-    ├── sums.f
-    ├── sunearth.f
-    ├── test23.f
-    ├── trunc.f
-    ├── types.f
-    ├── wages.f90
-    └── while.f
+├── src
+│   ├── ansurv.f
+│   ├── circle.f
+│   ├── circles.f90
+│   ├── energies.f
+│   ├── filei.f
+│   ├── fileio.f
+│   ├── fileir.f
+│   ├── fileo.f
+│   ├── fileoo.f
+│   ├── fileorig.f
+│   ├── first.f
+│   ├── firstfmt.f
+│   ├── format.f
+│   ├── getfilnam.f
+│   ├── getfilnam.for
+│   ├── inpdat.f
+│   ├── matrix.f
+│   ├── README
+│   ├── solvequad.f
+│   ├── stdio0.txt
+│   ├── stdio1.txt
+│   ├── stdio.txt
+│   ├── strings.f
+│   ├── strings.f90
+│   ├── sum10.f
+│   ├── sumn.f
+│   ├── sums.f
+│   ├── sunearth.f
+│   ├── surea.f
+│   ├── survrec.f
+│   ├── test23.f
+│   ├── trunc.f
+│   ├── types.f
+│   ├── wages.f90
+│   └── while.f
+└── SURVEYin
 
-6 directories, 43 files
+8 directories, 68 files
