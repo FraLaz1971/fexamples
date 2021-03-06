@@ -19,7 +19,7 @@ C WTG avg weight of tall girls
             PRINT *,'********************************************'
             PRINT *,'** tot n. of people:           ',NPE
             PRINT *,'** tot n. of girls:            ',NG
-            WRITE(*,300) ' ** avg height of girls (m):       ',HG/100.0
+            WRITE(*,300) ' ** avg height of girls (m):       ',HG/100
             PRINT *,'** n. of tall girls:           ',NTG
             WRITE(*,400) ' ** avg weight of tall girls (kg): ',WTG
             PRINT *,'********************************************'
@@ -52,8 +52,8 @@ C Height (cm)   columns 31-33
         INTEGER HEIGHT
 C Weight (kg)   columns 36-41  (nnn.dd)
         REAL WEIGHT
-        INTEGER MNPE, MNG, MNTG, HS, WS
-        REAL MHG, MWTG
+        INTEGER MNPE, MNG, MNTG, HS
+        REAL MHG, MWTG, WS
 C
 C       set 1000 as max. n. of records to process
         DATA RMAX/1000/
@@ -84,8 +84,13 @@ C 20 do an all records
           WRITE(*,*) 'ansurv.10: before reading record',RCOUNT
           READ(UNIT=10,FMT=110,ERR=777,END=888,IOSTAT=IOV)
      &    NAME,SEX,AGE,HEIGHT,WEIGHT  
-          IF ((SEX.EQ.1).AND.((AGE.LE.21).OR.(AGE.GE.35))) THEN
-                  WRITE(*,*) 'ansurv.10: ',NAME,'is a girl'
+          IF (SEX.EQ.9) THEN 
+              WRITE(*,*) 'ansurv.10:last-record:',RCOUNT,' ',SEX
+              GOTO 1000
+          END IF
+          WRITE(*,*) 'ansurv.10: WEIGHT=',WEIGHT
+          IF ((SEX.EQ.1).AND.((AGE.GE.21).OR.(AGE.LE.35))) THEN
+                WRITE(*,*) 'ansurv.10: ',NAME,'girl height',HEIGHT
                 MNG = MNG + 1
                 HS = HS + HEIGHT
                 WRITE(*,*) 'ansurv.10: MNG=',MNG
@@ -94,15 +99,12 @@ C 20 do an all records
                   WRITE(*,*) 'ansurv.10: ',NAME,'is a tall girl'
                   MNTG = MNTG + 1
                   WS = WS + WEIGHT
+                  WRITE(*,*) 'ansurv.10:sumodWGHT of tall girls =',HS
                 END IF
           END IF
           WRITE(UNIT=*,FMT=110,ERR=777,IOSTAT=IOV)
      &    NAME,SEX,AGE,HEIGHT,WEIGHT  
           WRITE(*,*) 'ansurv.10: after read record',RCOUNT
-          IF (SEX.EQ.9) THEN 
-              WRITE(*,*) 'ansurv.10:last-record:',RCOUNT,' ',SEX
-              GOTO 1000
-          END IF
 20     CONTINUE
         GOTO 1000
 110     FORMAT(A20,2X,I1,3X,I2,2X,I3,2X,F5.2)
