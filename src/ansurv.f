@@ -170,6 +170,13 @@ C XXX     YYY           9    0    0   0.01
 C C C C C C C C C C C C C C C C C C C C C C C
 C
 C algorithm as of tmrEllis1982 Ex. 6.2
+C given the survey data as up there
+C Write a program to calculate the average
+C height of females in the survey with ages
+C between 21 and 35 years (inclusive) and
+C the averate weight of those in this group
+C of the tall girls, who are over 1.7 m in height
+C here is the plan in pseudo-code
 C 1 Initialise variables
 C 2 Repeat the following up to 100 times
 C   2.1 Read sex,age,height and weight
