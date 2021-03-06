@@ -96,7 +96,8 @@ C 20 do an all records
                 WRITE(*,*) 'ansurv.10: MNG=',MNG
                 WRITE(*,*) 'ansurv.10: SUM OF girl HEIGHTS=',HS
                 IF (HEIGHT.GT.170) THEN
-                  WRITE(*,*) 'ansurv.10: ',NAME,'is a tall girl'
+                  WRITE(*,*) 'ansurv.10: ',NAME,'tall,hght',HEIGHT,
+     &            ',wght',WEIGHT             
                   MNTG = MNTG + 1
                   WS = WS + WEIGHT
                   WRITE(*,*) 'ansurv.10:sumodWGHT of tall girls =',HS
