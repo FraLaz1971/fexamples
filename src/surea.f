@@ -24,7 +24,7 @@ C END OF DATASET ---> 9 in column 23
 C saves dataset to a file called SUROUT.dat
 C opened on unit number 9
         OPEN(UNIT=9,FILE='SUROUT.dat',ERR=999)
-C reads from a file with unit 9 named SUREAin.dat
+C reads from a file with unit 10 named SUREAin.dat
         OPEN(UNIT=10,FILE='SURVEYin.dat',ERR=999, STATUS='OLD')
         PRINT *,'filei.10: before writing executed', COUNT
 C assign a male record as example
