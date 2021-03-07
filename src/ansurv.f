@@ -174,7 +174,7 @@ C given the survey data as up there
 C Write a program to calculate the average
 C height of females in the survey with ages
 C between 21 and 35 years (inclusive) and
-C the averate weight of those in this group
+C the average weight of those in this group
 C of the tall girls, who are over 1.7 m in height
 C here is the plan in pseudo-code
 C 1 Initialise variables
