@@ -18,7 +18,7 @@ C SHOWING GROSS PAT, NETT PAY AND ALL DEDUCTIONS
         PRINT *,'SUPERANNUATION:',SUPER,'$'
         PRINT *,'TAX:',TAX,'$'
         PRINT *,'INSURANCE:',14.5,'$'
-        PRINT *,''
+        PRINT *,' '
         PRINT *,'NETT PAY:',PAYNET,'$'
         END
 C ./pay <data/pay.dat

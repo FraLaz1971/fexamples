@@ -6,7 +6,8 @@ C RSUM is the sum of all marks values
         REAL RSUM, TEMPM
 C NMARKS is the number of marks to be summed
         INTEGER NMARKS
-        DO 10 NMARKS=1,100
+        RSUM = 0
+        DO 10, NMARKS=1,100
             READ (*,*) TEMPM
             RSUM = RSUM + TEMPM
 10      CONTINUE
@@ -14,7 +15,7 @@ C NMARKS is the number of marks to be summed
         PRINT *, 'The marks average is ', RSUM/100.0
         END
 C ./marks data/marks.dat
-C on posix (GNU/Linux, MacOS(X), BSD, cygwin, msys2 mingw...)
+C on posix (GNU/Linux, MacOS(X), BSD, cygwin, msys2 mingw, wsl, ...)
 C or just
 C marks data\marks.dat
 C on Microsoft cmd

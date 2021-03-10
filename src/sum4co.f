@@ -12,7 +12,7 @@ C   AND PRINTS THEIR SUM
         READ *,X(1),X(2)
         PRINT *,'****************************************'
         PRINT *,'please, enter 2nd couple of numbers'
-        READ *,X(3),X(4)
+        READ  *,X(3),X(4)
         PRINT *,'****************************************'
              
         RSUM1 = X(1) + X(2)
@@ -23,3 +23,5 @@ C   AND PRINTS THEIR SUM
 
         END
 C ./sum4co <data/sum4co.dat
+C or on MS cmd.exe
+C sum4co < data\sum4co.dat
