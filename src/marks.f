@@ -3,6 +3,7 @@ C THIS PROGRAM READS 100 exam marks and calculate
 C the average mark.
         PROGRAM MARKS
 C RSUM is the sum of all marks values
+C TEMPM is the sum of all marks values
         REAL RSUM, TEMPM
 C NMARKS is the number of marks to be summed
         INTEGER NMARKS
@@ -14,10 +15,10 @@ C NMARKS is the number of marks to be summed
         PRINT *, 'The final sum is ', RSUM
         PRINT *, 'The marks average is ', RSUM/100.0
         END
-C ./marks data/marks.dat
+C ./marks <data/marks.dat
 C on posix (GNU/Linux, MacOS(X), BSD, cygwin, msys2 mingw, wsl, ...)
 C or just
-C marks data\marks.dat
+C marks <data\marks.dat
 C on Microsoft cmd
 C This is the pseudo-code structure plan
 C 1. Initialise the sum variable to zero

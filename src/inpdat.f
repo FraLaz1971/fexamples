@@ -19,7 +19,7 @@ c Loop over data points
 
         do 10 i= 1, n
             read(u,100) x(i), y(i), z(i)
-10      enddo
+10      continue
 
 100     format (3(F10.4))
 c Close the file
@@ -28,7 +28,7 @@ c Now we should process the data somehow...
         do 20 i= 1, n
             write(*,*) 'writing reading 3D points, dimension ', nmax
             write(*,*) x(i), y(i), z(i)
-20      enddo
+20      continue
 
 9999    stop
         end

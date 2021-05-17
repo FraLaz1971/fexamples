@@ -11,147 +11,227 @@ SRCDIR = src/
 OBJDIR = obj/
 BINDIR = bin/
 RM = rm -f
-TARGET0 = circle
-TARGET1 = energies
-TARGET2 = filei
-TARGET3 = fileio
-TARGET4 = fileir
-TARGET5 = fileo
-TARGET6 = fileoo
-TARGET7 = fileorig
-TARGET8 = first
-TARGET9 = firstfmt
-TARGET10 = format
-TARGET11 = getfilnam
-TARGET12 = inpdat
-TARGET13 = matrix
-TARGET14 = solvequad
-TARGET15 = strings
-TARGET16 = sum10
-TARGET17 = sumn
-TARGET18 = sums
-TARGET19 = sunearth
-TARGET20 = surea
-TARGET21 = survrec
-TARGET22 = test23
-TARGET23 = trunc
-TARGET24 = types
-TARGET25 = while
-TARGETS = while types trunc test23 survrec surea sunearth sums sumn sum10 strings solvequad matrix inpdat getfilnam format firstfmt first fileorig fileoo fileo fileir fileio filei energies circle
+TARGET0 = ansurv
+TARGET1 = apples
+TARGET2 = cast
+TARGET3 = circle
+TARGET4 = energies
+TARGET5 = ex45
+TARGET6 = exprs
+TARGET7 = filei
+TARGET8 = fileio
+TARGET9 = fileir
+TARGET10 = fileo
+TARGET11 = fileoo
+TARGET12 = fileorig
+TARGET13 = filing
+TARGET14 = first
+TARGET15 = firstfmt
+TARGET16 = format
+TARGET17 = getfilnam
+TARGET18 = hmark
+TARGET19 = inpdat
+TARGET20 = marks
+TARGET21 = matrix
+TARGET22 = maxlog
+TARGET23 = mul
+TARGET24 = mysin
+TARGET25 = pay
+TARGET26 = quad4
+TARGET27 = solvequad
+TARGET28 = strings
+TARGET29 = sum10
+TARGET30 = sum4co
+TARGET31 = sumn
+TARGET32 = sums
+TARGET33 = sunearth
+TARGET34 = surea
+TARGET35 = survrec
+TARGET36 = tables
+TARGET37 = test23
+TARGET38 = trunc
+TARGET39 = types
+TARGET40 = wall
+TARGET41 = while
+TARGETS = while wall types trunc test23 tables survrec surea sunearth sums sumn sum4co sum10 strings solvequad quad4 pay mysin mul maxlog matrix marks inpdat hmark getfilnam format firstfmt first filing fileorig fileoo fileo fileir fileio filei exprs ex45 energies circle cast apples ansurv
 all: $(TARGETS)
 .PHONY: clean
-obj/$(TARGET0)$(OEXE): src/circle.f
+obj/$(TARGET0)$(OEXE): src/ansurv.f
+	$(FC) -c   $< -o obj/ansurv$(OEXE) $(FFLAGS)
+$(TARGET0): obj/ansurv$(OEXE)
+	$(FC) -o ansurv $< $(LDFLAGS)
+obj/$(TARGET1)$(OEXE): src/apples.f
+	$(FC) -c   $< -o obj/apples$(OEXE) $(FFLAGS)
+$(TARGET1): obj/apples$(OEXE)
+	$(FC) -o apples $< $(LDFLAGS)
+obj/$(TARGET2)$(OEXE): src/cast.f
+	$(FC) -c   $< -o obj/cast$(OEXE) $(FFLAGS)
+$(TARGET2): obj/cast$(OEXE)
+	$(FC) -o cast $< $(LDFLAGS)
+obj/$(TARGET3)$(OEXE): src/circle.f
 	$(FC) -c   $< -o obj/circle$(OEXE) $(FFLAGS)
-$(TARGET0): obj/circle$(OEXE)
+$(TARGET3): obj/circle$(OEXE)
 	$(FC) -o circle $< $(LDFLAGS)
-obj/$(TARGET1)$(OEXE): src/energies.f
+obj/$(TARGET4)$(OEXE): src/energies.f
 	$(FC) -c   $< -o obj/energies$(OEXE) $(FFLAGS)
-$(TARGET1): obj/energies$(OEXE)
+$(TARGET4): obj/energies$(OEXE)
 	$(FC) -o energies $< $(LDFLAGS)
-obj/$(TARGET2)$(OEXE): src/filei.f
+obj/$(TARGET5)$(OEXE): src/ex45.f
+	$(FC) -c   $< -o obj/ex45$(OEXE) $(FFLAGS)
+$(TARGET5): obj/ex45$(OEXE)
+	$(FC) -o ex45 $< $(LDFLAGS)
+obj/$(TARGET6)$(OEXE): src/exprs.f
+	$(FC) -c   $< -o obj/exprs$(OEXE) $(FFLAGS)
+$(TARGET6): obj/exprs$(OEXE)
+	$(FC) -o exprs $< $(LDFLAGS)
+obj/$(TARGET7)$(OEXE): src/filei.f
 	$(FC) -c   $< -o obj/filei$(OEXE) $(FFLAGS)
-$(TARGET2): obj/filei$(OEXE)
+$(TARGET7): obj/filei$(OEXE)
 	$(FC) -o filei $< $(LDFLAGS)
-obj/$(TARGET3)$(OEXE): src/fileio.f
+obj/$(TARGET8)$(OEXE): src/fileio.f
 	$(FC) -c   $< -o obj/fileio$(OEXE) $(FFLAGS)
-$(TARGET3): obj/fileio$(OEXE)
+$(TARGET8): obj/fileio$(OEXE)
 	$(FC) -o fileio $< $(LDFLAGS)
-obj/$(TARGET4)$(OEXE): src/fileir.f
+obj/$(TARGET9)$(OEXE): src/fileir.f
 	$(FC) -c   $< -o obj/fileir$(OEXE) $(FFLAGS)
-$(TARGET4): obj/fileir$(OEXE)
+$(TARGET9): obj/fileir$(OEXE)
 	$(FC) -o fileir $< $(LDFLAGS)
-obj/$(TARGET5)$(OEXE): src/fileo.f
+obj/$(TARGET10)$(OEXE): src/fileo.f
 	$(FC) -c   $< -o obj/fileo$(OEXE) $(FFLAGS)
-$(TARGET5): obj/fileo$(OEXE)
+$(TARGET10): obj/fileo$(OEXE)
 	$(FC) -o fileo $< $(LDFLAGS)
-obj/$(TARGET6)$(OEXE): src/fileoo.f
+obj/$(TARGET11)$(OEXE): src/fileoo.f
 	$(FC) -c   $< -o obj/fileoo$(OEXE) $(FFLAGS)
-$(TARGET6): obj/fileoo$(OEXE)
+$(TARGET11): obj/fileoo$(OEXE)
 	$(FC) -o fileoo $< $(LDFLAGS)
-obj/$(TARGET7)$(OEXE): src/fileorig.f
+obj/$(TARGET12)$(OEXE): src/fileorig.f
 	$(FC) -c   $< -o obj/fileorig$(OEXE) $(FFLAGS)
-$(TARGET7): obj/fileorig$(OEXE)
+$(TARGET12): obj/fileorig$(OEXE)
 	$(FC) -o fileorig $< $(LDFLAGS)
-obj/$(TARGET8)$(OEXE): src/first.f
+obj/$(TARGET13)$(OEXE): src/filing.f
+	$(FC) -c   $< -o obj/filing$(OEXE) $(FFLAGS)
+$(TARGET13): obj/filing$(OEXE)
+	$(FC) -o filing $< $(LDFLAGS)
+obj/$(TARGET14)$(OEXE): src/first.f
 	$(FC) -c   $< -o obj/first$(OEXE) $(FFLAGS)
-$(TARGET8): obj/first$(OEXE)
+$(TARGET14): obj/first$(OEXE)
 	$(FC) -o first $< $(LDFLAGS)
-obj/$(TARGET9)$(OEXE): src/firstfmt.f
+obj/$(TARGET15)$(OEXE): src/firstfmt.f
 	$(FC) -c   $< -o obj/firstfmt$(OEXE) $(FFLAGS)
-$(TARGET9): obj/firstfmt$(OEXE)
+$(TARGET15): obj/firstfmt$(OEXE)
 	$(FC) -o firstfmt $< $(LDFLAGS)
-obj/$(TARGET10)$(OEXE): src/format.f
+obj/$(TARGET16)$(OEXE): src/format.f
 	$(FC) -c   $< -o obj/format$(OEXE) $(FFLAGS)
-$(TARGET10): obj/format$(OEXE)
+$(TARGET16): obj/format$(OEXE)
 	$(FC) -o format $< $(LDFLAGS)
-obj/$(TARGET11)$(OEXE): src/getfilnam.f
+obj/$(TARGET17)$(OEXE): src/getfilnam.f
 	$(FC) -c   $< -o obj/getfilnam$(OEXE) $(FFLAGS)
-$(TARGET11): obj/getfilnam$(OEXE)
+$(TARGET17): obj/getfilnam$(OEXE)
 	$(FC) -o getfilnam $< $(LDFLAGS)
-obj/$(TARGET12)$(OEXE): src/inpdat.f
+obj/$(TARGET18)$(OEXE): src/hmark.f
+	$(FC) -c   $< -o obj/hmark$(OEXE) $(FFLAGS)
+$(TARGET18): obj/hmark$(OEXE)
+	$(FC) -o hmark $< $(LDFLAGS)
+obj/$(TARGET19)$(OEXE): src/inpdat.f
 	$(FC) -c   $< -o obj/inpdat$(OEXE) $(FFLAGS)
-$(TARGET12): obj/inpdat$(OEXE)
+$(TARGET19): obj/inpdat$(OEXE)
 	$(FC) -o inpdat $< $(LDFLAGS)
-obj/$(TARGET13)$(OEXE): src/matrix.f
+obj/$(TARGET20)$(OEXE): src/marks.f
+	$(FC) -c   $< -o obj/marks$(OEXE) $(FFLAGS)
+$(TARGET20): obj/marks$(OEXE)
+	$(FC) -o marks $< $(LDFLAGS)
+obj/$(TARGET21)$(OEXE): src/matrix.f
 	$(FC) -c   $< -o obj/matrix$(OEXE) $(FFLAGS)
-$(TARGET13): obj/matrix$(OEXE)
+$(TARGET21): obj/matrix$(OEXE)
 	$(FC) -o matrix $< $(LDFLAGS)
-obj/$(TARGET14)$(OEXE): src/solvequad.f
+obj/$(TARGET22)$(OEXE): src/maxlog.f
+	$(FC) -c   $< -o obj/maxlog$(OEXE) $(FFLAGS)
+$(TARGET22): obj/maxlog$(OEXE)
+	$(FC) -o maxlog $< $(LDFLAGS)
+obj/$(TARGET23)$(OEXE): src/mul.f
+	$(FC) -c   $< -o obj/mul$(OEXE) $(FFLAGS)
+$(TARGET23): obj/mul$(OEXE)
+	$(FC) -o mul $< $(LDFLAGS)
+obj/$(TARGET24)$(OEXE): src/mysin.f
+	$(FC) -c   $< -o obj/mysin$(OEXE) $(FFLAGS)
+$(TARGET24): obj/mysin$(OEXE)
+	$(FC) -o mysin $< $(LDFLAGS)
+obj/$(TARGET25)$(OEXE): src/pay.f
+	$(FC) -c   $< -o obj/pay$(OEXE) $(FFLAGS)
+$(TARGET25): obj/pay$(OEXE)
+	$(FC) -o pay $< $(LDFLAGS)
+obj/$(TARGET26)$(OEXE): src/quad4.f
+	$(FC) -c   $< -o obj/quad4$(OEXE) $(FFLAGS)
+$(TARGET26): obj/quad4$(OEXE)
+	$(FC) -o quad4 $< $(LDFLAGS)
+obj/$(TARGET27)$(OEXE): src/solvequad.f
 	$(FC) -c   $< -o obj/solvequad$(OEXE) $(FFLAGS)
-$(TARGET14): obj/solvequad$(OEXE)
+$(TARGET27): obj/solvequad$(OEXE)
 	$(FC) -o solvequad $< $(LDFLAGS)
-obj/$(TARGET15)$(OEXE): src/strings.f
+obj/$(TARGET28)$(OEXE): src/strings.f
 	$(FC) -c   $< -o obj/strings$(OEXE) $(FFLAGS)
-$(TARGET15): obj/strings$(OEXE)
+$(TARGET28): obj/strings$(OEXE)
 	$(FC) -o strings $< $(LDFLAGS)
-obj/$(TARGET16)$(OEXE): src/sum10.f
+obj/$(TARGET29)$(OEXE): src/sum10.f
 	$(FC) -c   $< -o obj/sum10$(OEXE) $(FFLAGS)
-$(TARGET16): obj/sum10$(OEXE)
+$(TARGET29): obj/sum10$(OEXE)
 	$(FC) -o sum10 $< $(LDFLAGS)
-obj/$(TARGET17)$(OEXE): src/sumn.f
+obj/$(TARGET30)$(OEXE): src/sum4co.f
+	$(FC) -c   $< -o obj/sum4co$(OEXE) $(FFLAGS)
+$(TARGET30): obj/sum4co$(OEXE)
+	$(FC) -o sum4co $< $(LDFLAGS)
+obj/$(TARGET31)$(OEXE): src/sumn.f
 	$(FC) -c   $< -o obj/sumn$(OEXE) $(FFLAGS)
-$(TARGET17): obj/sumn$(OEXE)
+$(TARGET31): obj/sumn$(OEXE)
 	$(FC) -o sumn $< $(LDFLAGS)
-obj/$(TARGET18)$(OEXE): src/sums.f
+obj/$(TARGET32)$(OEXE): src/sums.f
 	$(FC) -c   $< -o obj/sums$(OEXE) $(FFLAGS)
-$(TARGET18): obj/sums$(OEXE)
+$(TARGET32): obj/sums$(OEXE)
 	$(FC) -o sums $< $(LDFLAGS)
-obj/$(TARGET19)$(OEXE): src/sunearth.f
+obj/$(TARGET33)$(OEXE): src/sunearth.f
 	$(FC) -c   $< -o obj/sunearth$(OEXE) $(FFLAGS)
-$(TARGET19): obj/sunearth$(OEXE)
+$(TARGET33): obj/sunearth$(OEXE)
 	$(FC) -o sunearth $< $(LDFLAGS)
-obj/$(TARGET20)$(OEXE): src/surea.f
+obj/$(TARGET34)$(OEXE): src/surea.f
 	$(FC) -c   $< -o obj/surea$(OEXE) $(FFLAGS)
-$(TARGET20): obj/surea$(OEXE)
+$(TARGET34): obj/surea$(OEXE)
 	$(FC) -o surea $< $(LDFLAGS)
-obj/$(TARGET21)$(OEXE): src/survrec.f
+obj/$(TARGET35)$(OEXE): src/survrec.f
 	$(FC) -c   $< -o obj/survrec$(OEXE) $(FFLAGS)
-$(TARGET21): obj/survrec$(OEXE)
+$(TARGET35): obj/survrec$(OEXE)
 	$(FC) -o survrec $< $(LDFLAGS)
-obj/$(TARGET22)$(OEXE): src/test23.f
+obj/$(TARGET36)$(OEXE): src/tables.f
+	$(FC) -c   $< -o obj/tables$(OEXE) $(FFLAGS)
+$(TARGET36): obj/tables$(OEXE)
+	$(FC) -o tables $< $(LDFLAGS)
+obj/$(TARGET37)$(OEXE): src/test23.f
 	$(FC) -c   $< -o obj/test23$(OEXE) $(FFLAGS)
-$(TARGET22): obj/test23$(OEXE)
+$(TARGET37): obj/test23$(OEXE)
 	$(FC) -o test23 $< $(LDFLAGS)
-obj/$(TARGET23)$(OEXE): src/trunc.f
+obj/$(TARGET38)$(OEXE): src/trunc.f
 	$(FC) -c   $< -o obj/trunc$(OEXE) $(FFLAGS)
-$(TARGET23): obj/trunc$(OEXE)
+$(TARGET38): obj/trunc$(OEXE)
 	$(FC) -o trunc $< $(LDFLAGS)
-obj/$(TARGET24)$(OEXE): src/types.f
+obj/$(TARGET39)$(OEXE): src/types.f
 	$(FC) -c   $< -o obj/types$(OEXE) $(FFLAGS)
-$(TARGET24): obj/types$(OEXE)
+$(TARGET39): obj/types$(OEXE)
 	$(FC) -o types $< $(LDFLAGS)
-obj/$(TARGET25)$(OEXE): src/while.f
+obj/$(TARGET40)$(OEXE): src/wall.f
+	$(FC) -c   $< -o obj/wall$(OEXE) $(FFLAGS)
+$(TARGET40): obj/wall$(OEXE)
+	$(FC) -o wall $< $(LDFLAGS)
+obj/$(TARGET41)$(OEXE): src/while.f
 	$(FC) -c   $< -o obj/while$(OEXE) $(FFLAGS)
-$(TARGET25): obj/while$(OEXE)
+$(TARGET41): obj/while$(OEXE)
 	$(FC) -o while $< $(LDFLAGS)
-TARGET26 = stdio
+TARGET42 = stdio
 $(SRCDIR)stdio.f: $(SRCDIR)stdio0.txt $(SRCDIR)stdio1.txt
 	 cat $(SRCDIR)stdio0.txt $(SRCDIR)stdio.txt >$(SRCDIR)stdio.f
-$(OBJDIR)$(TARGET26)$(OEXE): $(SRCDIR)$(TARGET26).f
-	$(FC) $(FFLAGS) $< $(FDFLAGS) $(OBJDIR)$(TARGET26)$(OEXE) 
-$(TARGET26)$(EEXE): $(OBJDIR)$(TARGET26)$(OEXE)
-	$(FL) $< $(FDFLAGS) $(TARGET26)$(EEXE) $(LDFLAGS)
-	$(RM) $(SRCDIR)$(TARGET26).f
+$(OBJDIR)$(TARGET42)$(OEXE): $(SRCDIR)$(TARGET42).f
+	$(FC) $(FFLAGS) $< $(FDFLAGS) $(OBJDIR)$(TARGET42)$(OEXE) 
+$(TARGET42)$(EEXE): $(OBJDIR)$(TARGET42)$(OEXE)
+	$(FL) $< $(FDFLAGS) $(TARGET42)$(EEXE) $(LDFLAGS)
+	$(RM) $(SRCDIR)$(TARGET42).f
 install: all
 	mv $(TARGETS) $(BINDIR)
 clean:

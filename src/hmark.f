@@ -1,4 +1,4 @@
-C from Ellis,1982 adapt. example 4.2 p.52
+C from Ellis,1982 adapt. example 4.2 p.52-53
 C A class of N students has done an exam, marks are assigned
 C THIS PROGRAM first READS the n. of poeple doing an exam
 C Then read their marks and print the highest and lowest marks,
